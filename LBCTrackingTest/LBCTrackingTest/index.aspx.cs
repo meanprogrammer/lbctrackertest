@@ -25,9 +25,10 @@ namespace LBCTrackingTest
                 foreach (var item in sfs)
                 {
                     //Console.WriteLine(string.Format("Tracking #: {0}", item.TrackingNo));
-                    b.AppendFormat("Tracking #: {0}", item.TrackingNo);
+                    b.AppendFormat("Tracking #: {0} {1}", item.TrackingNo, Environment.NewLine);
                     //Console.WriteLine(string.Format("Status: {0}", item.statusMessage));
-                    b.AppendFormat("Status: {0}", item.statusMessage);
+                    b.AppendFormat("Status: {0} {1}", item.statusMessage, Environment.NewLine);
+                    b.AppendFormat("Status code: {0} {1}", item.statusCode, Environment.NewLine);
                 }
 
             }
