@@ -13,7 +13,7 @@ namespace LBCTrackingTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string[] trackings = new string[] { "311216816471", "321128079188", "311216695131", "311216695121" };
+            string[] trackings = new string[] { "311216816471", "321128079188", "311216695131", "311216695121", "311216816431" };
             LBCAPI.Service service = new LBCAPI.Service();
 
             StringBuilder b = new StringBuilder();
