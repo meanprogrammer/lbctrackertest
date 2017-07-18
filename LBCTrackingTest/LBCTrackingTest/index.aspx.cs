@@ -59,7 +59,7 @@ namespace LBCTrackingTest
 
                 var query =
                 from th in tempHistory
-                orderby th.DatePosted ascending
+                orderby th.DatePosted descending
                 select th;
 
                data.Add(tracking, query.FirstOrDefault());
