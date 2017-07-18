@@ -18,12 +18,20 @@ namespace LBCTrackingTest
 
             StringBuilder b = new StringBuilder();
 
+            Dictionary<string, ShipmentHistoryEntry> data = new Dictionary<string, ShipmentHistoryEntry>();
+
+          
+
             foreach (string tracking in trackings)
             {
                 shipmenthistory[] sfs = service.trackandtracehistory(tracking);
 
+                List<ShipmentHistoryEntry> tempHistory = new List<ShipmentHistoryEntry>();
+
                 foreach (var item in sfs)
                 {
+
+
                     /*
                     b.AppendFormat("Tracking #: {0} {1}", item.TrackingNo, Environment.NewLine);
                     b.AppendFormat("Status: {0} {1}", item.statusMessage, Environment.NewLine);
@@ -36,12 +44,39 @@ namespace LBCTrackingTest
                     b.AppendFormat("Status code: {0} {1}", item.statusCode, Environment.NewLine);
                     b.AppendFormat("Status Message: {0} {1}", item.statusMessage, Environment.NewLine);
                     b.AppendFormat("SysOrig: {0} {1}", item.SysOrig, Environment.NewLine);
+
+                    DateTime realDate = DateHelper.MergeDateWithTime(item.DatePosted, item.DatePostedTime);
+
+                    tempHistory.Add(new ShipmentHistoryEntry() { 
+                        StatusandLocation = item.StatusandLocation,
+                        StatusCode = item.statusCode,
+                        StatusMessage = item.statusMessage,
+                        SysOrig = int.Parse(item.SysOrig),
+                        DatePosted = realDate
+                        //DatePostedTime = DateTime.Parse(item.DatePostedTime)                        
+                    });
                 }
+
+                var query =
+                from th in tempHistory
+                orderby th.DatePosted ascending
+                select th;
+
+               data.Add(tracking, query.FirstOrDefault());
 
             }
 
-            this.Literal1.Text = b.ToString();
-            this.TextBox1.Text = b.ToString();
+            foreach (KeyValuePair<string, ShipmentHistoryEntry> item in data)
+            {
+                TableRow row = new TableRow();
+                row.Cells.Add(new TableCell() { Text = item.Key });
+                ShipmentHistoryEntry v = item.Value;
+                row.Cells.Add(new TableCell() { Text = v.StatusandLocation });
+                row.Cells.Add(new TableCell() { Text = v.StatusMessage });
+
+                this.Table1.Rows.Add(row);
+            }
+
             //Console.ReadLine();
         }
     }

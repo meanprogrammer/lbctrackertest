@@ -10,9 +10,21 @@
     <form id="form1" runat="server">
     <div>
         <h1>Index</h1>
-        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
-
-        <asp:TextBox ID="TextBox1"  runat="server" Height="231px" TextMode="MultiLine" Width="541px"></asp:TextBox>
+        <p>
+            <asp:Table ID="Table1" runat="server" BorderStyle="Solid" BorderWidth="1px" CellPadding="5" CellSpacing="5">
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell>
+                        TrackingNo
+                    </asp:TableHeaderCell>
+                     <asp:TableHeaderCell>
+                        Status and Location
+                    </asp:TableHeaderCell>
+                     <asp:TableHeaderCell>
+                        Message
+                    </asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+            </asp:Table>
+        </p>
     </div>
     </form>
 </body>

@@ -167,6 +167,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +184,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ShipmentHistoryEntry.cs" />
     <Compile Include="Web References\LBCAPI\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
