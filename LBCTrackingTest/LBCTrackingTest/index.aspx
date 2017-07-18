@@ -11,6 +11,8 @@
     <div>
         <h1>Index</h1>
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
+        <asp:TextBox ID="TextBox1"  runat="server" Height="231px" TextMode="MultiLine" Width="541px"></asp:TextBox>
     </div>
     </form>
 </body>

@@ -20,20 +20,28 @@ namespace LBCTrackingTest
 
             foreach (string tracking in trackings)
             {
-                shipmentFields[] sfs = service.trackandtraceDetails(tracking);
+                shipmenthistory[] sfs = service.trackandtracehistory(tracking);
 
                 foreach (var item in sfs)
                 {
-                    //Console.WriteLine(string.Format("Tracking #: {0}", item.TrackingNo));
+                    /*
                     b.AppendFormat("Tracking #: {0} {1}", item.TrackingNo, Environment.NewLine);
-                    //Console.WriteLine(string.Format("Status: {0}", item.statusMessage));
                     b.AppendFormat("Status: {0} {1}", item.statusMessage, Environment.NewLine);
                     b.AppendFormat("Status code: {0} {1}", item.statusCode, Environment.NewLine);
+                     */
+
+                    b.AppendFormat("Date Posted #: {0} {1}", item.DatePosted, Environment.NewLine);
+                    b.AppendFormat("Date Posted Time: {0} {1}", item.DatePostedTime, Environment.NewLine);
+                    b.AppendFormat("Status and Location: {0} {1}", item.StatusandLocation, Environment.NewLine);
+                    b.AppendFormat("Status code: {0} {1}", item.statusCode, Environment.NewLine);
+                    b.AppendFormat("Status Message: {0} {1}", item.statusMessage, Environment.NewLine);
+                    b.AppendFormat("SysOrig: {0} {1}", item.SysOrig, Environment.NewLine);
                 }
 
             }
 
             this.Literal1.Text = b.ToString();
+            this.TextBox1.Text = b.ToString();
             //Console.ReadLine();
         }
     }
