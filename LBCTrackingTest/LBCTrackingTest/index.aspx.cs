@@ -1,4 +1,5 @@
 ﻿using LBCTrackingTest.LBCAPI;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,11 @@ namespace LBCTrackingTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string[] trackings = new string[] { "311216816471", "321128079188", "311216695131", "311216695121", "311216816431" };
+            ICacheManager cache = CacheFactory.GetCacheManager();
+
+            List<string> trackingNos = cache.GetData("trackingNos") as List<string>;
+
+            string[] trackings = trackingNos.ToArray(); //new string[] { "311216816471", "321128079188", "311216695131", "311216695121", "311216816431" };
             LBCAPI.Service service = new LBCAPI.Service();
 
             StringBuilder b = new StringBuilder();
@@ -78,6 +83,20 @@ namespace LBCTrackingTest
             }
 
             //Console.ReadLine();
+        }
+
+        protected void AddTrackingButton_Click(object sender, EventArgs e)
+        {
+            ICacheManager cache = CacheFactory.GetCacheManager();
+
+            List<string> trackingNos = cache.GetData("trackingNos") as List<string>;
+            if (trackingNos == null)
+            {
+                trackingNos = new List<string>();
+            }
+            trackingNos.Add(this.TrackingTextbox.Text.Trim());
+            cache.Add("trackingNos", trackingNos);
+            this.TrackingTextbox.Text = string.Empty;
         }
     }
 }

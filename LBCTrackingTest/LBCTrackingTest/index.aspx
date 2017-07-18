@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
     <div>
         <h1>Index</h1>
+        <asp:TextBox ID="TrackingTextbox" runat="server"></asp:TextBox>
+        <asp:Button ID="AddTrackingButton" runat="server" Text="Add" OnClick="AddTrackingButton_Click" />
+
         <p>
             <asp:Table ID="Table1" runat="server" BorderStyle="Solid" BorderWidth="1px" CellPadding="5" CellSpacing="5">
                 <asp:TableHeaderRow>
