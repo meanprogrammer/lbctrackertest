@@ -47,7 +47,8 @@
                 type: "POST",
                 url: "TrackingHandler.ashx?tno=311216816471",
                 success: function (data) {
-                    console.log(data);
+                    console.log(data.DatePosted);
+                    console.log(data['DatePosted']);
                 }
             });
         });
