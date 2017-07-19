@@ -136,10 +136,10 @@
     <Content Include="Web References\LBCAPI\provincesFields.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\LBCAPI\Reference.map">
+    <None Include="Web References\LBCAPI\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web References\LBCAPI\ReferRateUs.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
