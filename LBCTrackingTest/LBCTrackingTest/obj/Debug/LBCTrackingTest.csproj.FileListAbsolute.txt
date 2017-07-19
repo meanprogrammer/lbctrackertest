@@ -32,3 +32,5 @@ C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\Mic
 C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.dll
 C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.pdb
 C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.csprojResolveAssemblyReference.cache
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\LBCTracking.Library.dll
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\LBCTracking.Library.pdb

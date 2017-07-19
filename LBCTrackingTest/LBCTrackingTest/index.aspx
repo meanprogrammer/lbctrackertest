@@ -11,8 +11,8 @@
     <form id="form1" runat="server">
     <div>
         <h1>Index</h1>
-        <asp:TextBox ID="TrackingTextbox" ClientIDMode="Static" runat="server"></asp:TextBox>
-        <asp:Button ID="AddTrackingButton" ClientIDMode="Static" runat="server" Text="Add"/>
+        <asp:TextBox ID="TrackingTextbox" ClientIDMode="Static" ></asp:TextBox>
+        <asp:Button ID="AddTrackingButton" ClientIDMode="Static" Text="Add"/>
 
 
 
