@@ -1,0 +1,2446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Mobilegetcountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="MobilegetcountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobilegetcountriesResult" type="tns:ArrayOfCountryFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCountryFields">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="countryFields" nillable="true" type="tns:countryFields" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="countryFields">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="countrycode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Mobilegetprovinces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobilegetprovincesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobilegetprovincesResult" type="tns:ArrayOfProvincesFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProvincesFields">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="provincesFields" nillable="true" type="tns:provincesFields" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="provincesFields">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="provid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="provname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MobileSearchBranch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="provid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cityid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="countryid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileSearchBranchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileSearchBranchResult" type="tns:ArrayOfBranchFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBranchFields">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="branchFields" nillable="true" type="tns:branchFields" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="branchFields">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="branchid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branchcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branchname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branchaddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branchTelphone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branchTelphone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branchTelphone3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getprovinces">
+        <s:complexType />
+      </s:element>
+      <s:element name="getprovincesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getprovincesResult" type="tns:ArrayOfProvincesFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="provid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCitiesResult" type="tns:ArrayOfCityFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCityFields">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cityFields" nillable="true" type="tns:cityFields" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cityFields">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cityid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="countrycode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cityname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchBranch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="provid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cityid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBranchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchBranchResult" type="tns:ArrayOfBranchFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllBranches">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllBranchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllBranchesResult" type="tns:ArrayOfBranchFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListBranchesSearchbyCityName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cityname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListBranchesSearchbyCityNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListBranchesSearchbyCityNameResult" type="tns:ArrayOfBranchFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="trackandtraceDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackingno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="trackandtraceDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackandtraceDetailsResult" type="tns:ArrayOfShipmentFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShipmentFields">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="shipmentFields" nillable="true" type="tns:shipmentFields" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="shipmentFields">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TrackingNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProdDescr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Branch_Origin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchDestination" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipperName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipperAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipperContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConsigneeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConsigneeAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConsigneeContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="trackandtracehistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackingno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="trackandtracehistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackandtracehistoryResult" type="tns:ArrayOfShipmenthistory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShipmenthistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="shipmenthistory" nillable="true" type="tns:shipmenthistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="shipmenthistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DatePosted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusandLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatePostedTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SysOrig" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CashRemittancePPHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackingno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CashRemittancePPHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CashRemittancePPHeaderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CashRemittanceIPPHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackingno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shipName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CashRemittanceIPPHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CashRemittanceIPPHeaderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="betaBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trackingno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="betaBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="betaBookingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="notification" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMobileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vwMobile">
+        <s:complexType />
+      </s:element>
+      <s:element name="vwMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vwMobileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCCountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="LBCCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCCountriesResult" type="tns:ArrayOfLBCCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLBCCountry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LBCCountry" nillable="true" type="tns:LBCCountry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LBCCountry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListProductsandServices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProductsandServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProductsandServicesResult" type="tns:ArrayOfProductsandServices" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductsandServices">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductsandServices" nillable="true" type="tns:ProductsandServices" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductsandServices">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductTypeID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductGrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeImage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateInserted" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListProductTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProductTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProductTypesResult" type="tns:ArrayOfLBCProductTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLBCProductTypes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LBCProductTypes" nillable="true" type="tns:LBCProductTypes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LBCProductTypes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductTypeID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOBILEAPPREF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductGrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeImage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateInserted" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListHotlines">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListHotlinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListHotlinesResult" type="tns:ArrayOfLBCHotlines" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLBCHotlines">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LBCHotlines" nillable="true" type="tns:LBCHotlines" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LBCHotlines">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HotlineNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LBCProvinces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCProvincesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCProvincesResult" type="tns:ArrayOfProvincesFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="provinceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCCitiesResult" type="tns:ArrayOfCityFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCBranches">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchdescr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCBranchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCBranchesResult" type="tns:ArrayOfBranchFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCBranchCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCBranchCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCBranchCountryResult" type="tns:ArrayOfBranchFields" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRemittanceRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PeoplesMoney" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CountryDestiID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRemittanceRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRemittanceRateResult" type="tns:ArrayOfResponseRemittance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseRemittance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseRemittance" nillable="true" type="tns:ResponseRemittance" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseRemittance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListRemittanceRate_NEW">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PeoplesMoney" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CountryDestiID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRemittanceRate_NEWResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRemittanceRate_NEWResult" type="tns:ArrayOfResponseRemittance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrigID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DestiID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDocumentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDocumentsResult" type="tns:ArrayOfResponseDocuments" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseDocuments">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseDocuments" nillable="true" type="tns:ResponseDocuments" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseDocuments">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListPlasticPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrigID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DestiID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="DeclaredValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListPlasticPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListPlasticPackageResult" type="tns:ArrayOfResponsePackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponsePackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponsePackage" nillable="true" type="tns:ResponsePackage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponsePackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valuation" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Freight" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListBoxPackageRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrigID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DestiID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Size" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="DeclaredValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListBoxPackageRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListBoxPackageRateResult" type="tns:ArrayOfResponsePackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListInternational">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Product" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DESTIAREAID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MINWT" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListInternationalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListInternationalResult" type="tns:ArrayOfResponseInternational" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseInternational">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseInternational" nillable="true" type="tns:ResponseInternational" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseInternational">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListCountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCountriesResult" type="tns:ArrayOfResponseCountries" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseCountries">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseCountries" nillable="true" type="tns:ResponseCountries" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseCountries">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListCountries" type="tns:ArrayOfListCountries" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfListCountries">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListCountries" nillable="true" type="tns:ListCountries" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListCountries">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListInternationalCountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListInternationalCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListInternationalCountriesResult" type="tns:ArrayOfResponseCountries" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListInternationalCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PROVID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListInternationalCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListInternationalCitiesResult" type="tns:ArrayOfResponseInternationalCities" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseInternationalCities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseInternationalCities" nillable="true" type="tns:ResponseInternationalCities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseInternationalCities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListCities" type="tns:ArrayOfListCities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfListCities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListCities" nillable="true" type="tns:ListCities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListCities">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="INT_ZONES" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITYDESCR" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListInternationalProduct">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListInternationalProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListInternationalProductResult" type="tns:ArrayOfResponseProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseProduct" nillable="true" type="tns:ResponseProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product" type="tns:ArrayOfListProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfListProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListProduct" nillable="true" type="tns:ListProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProdID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProdDescr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProdMajTypeID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListProduct">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProductResult" type="tns:ArrayOfResponseProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAreas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAreasResult" type="tns:ArrayOfResponseArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseArea">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseArea" nillable="true" type="tns:ResponseArea" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseArea">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="tns:ArrayOfListArea" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfListArea">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListArea" nillable="true" type="tns:ListArea" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListArea">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AreaID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaDescrDescr" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListBalikBayanBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RateID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrigID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DestiID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NoOfBoxes" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListBalikBayanBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListBalikBayanBoxResult" type="tns:ArrayOfResponseBalikBayanBox" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseBalikBayanBox">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseBalikBayanBox" nillable="true" type="tns:ResponseBalikBayanBox" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseBalikBayanBox">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListD1">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListD1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListD1Result" type="tns:ArrayOfResponseLBCD1List" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResponseLBCD1List">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseLBCD1List" nillable="true" type="tns:ResponseLBCD1List" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseLBCD1List">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListLBCD1List" type="tns:ArrayOfListLBCD1List" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfListLBCD1List">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListLBCD1List" nillable="true" type="tns:ListLBCD1List" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListLBCD1List">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="D1ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="D1Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryorigin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="callerclassification" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="temptrackingno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tickettype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shiporigin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobilephone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveTicketResult" type="tns:CMOSTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CMOSTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListCMOSConcernType">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListCMOSConcernTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCMOSConcernTypeResult" type="tns:ArrayOfCMOSConcernType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCMOSConcernType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CMOSConcernType" nillable="true" type="tns:CMOSConcernType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CMOSConcernType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketTypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListCMOSCallerClassification">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListCMOSCallerClassificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCMOSCallerClassificationResult" type="tns:ArrayOfCallerClassification" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCallerClassification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CallerClassification" nillable="true" type="tns:CallerClassification" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CallerClassification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListLBCRateUs">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListLBCRateUsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLBCRateUsResult" type="tns:ReferRateUs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReferRateUs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListReference" type="tns:ArrayOfRefLBCRateUs" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRefLBCRateUs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="refLBCRateUs" nillable="true" type="tns:refLBCRateUs" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="refLBCRateUs">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RateUs_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Question_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Question" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LBCRateUs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pRateUsId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pMobileNo" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="pAnswerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCRateUsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCRateUsResult" type="tns:CompRateUs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CompRateUs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LBCPromo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pCountryID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LBCPromoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LBCPromoResult" type="tns:listPromos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="listPromos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lsPromos" type="tns:ArrayOfLBCPromos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLBCPromos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LBCPromos" nillable="true" type="tns:LBCPromos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LBCPromos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PromoName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromoDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromoImage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListSubCompAreas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListSubCompAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListSubCompAreasResult" type="tns:ListSubCompanies" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListSubCompanies">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Areas" type="tns:ArrayOfSubCompanies" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSubCompanies">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SubCompanies" nillable="true" type="tns:SubCompanies" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubCompanies">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VPName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListTeams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="tns:paramDataTeams" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="paramDataTeams">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SubCompID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListTeamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListTeamsResult" type="tns:ListTeams" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListTeams">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Team" type="tns:ArrayOfTeam" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTeam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Team" nillable="true" type="tns:Team" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Team">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TeamID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeamDescr" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListBranchesByTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="tns:paramBranches" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="paramBranches">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TeamID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListBranchesByTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListBranchesByTeamResult" type="tns:ListBranches" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListBranches">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Branches" type="tns:ArrayOfBranchFields" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MobilegetcountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:Mobilegetcountries" />
+  </wsdl:message>
+  <wsdl:message name="MobilegetcountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:MobilegetcountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobilegetprovincesSoapIn">
+    <wsdl:part name="parameters" element="tns:Mobilegetprovinces" />
+  </wsdl:message>
+  <wsdl:message name="MobilegetprovincesSoapOut">
+    <wsdl:part name="parameters" element="tns:MobilegetprovincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileSearchBranchSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileSearchBranch" />
+  </wsdl:message>
+  <wsdl:message name="MobileSearchBranchSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileSearchBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="getprovincesSoapIn">
+    <wsdl:part name="parameters" element="tns:getprovinces" />
+  </wsdl:message>
+  <wsdl:message name="getprovincesSoapOut">
+    <wsdl:part name="parameters" element="tns:getprovincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:getCities" />
+  </wsdl:message>
+  <wsdl:message name="getCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:getCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchBranchSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchBranch" />
+  </wsdl:message>
+  <wsdl:message name="SearchBranchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllBranchesSoapIn">
+    <wsdl:part name="parameters" element="tns:AllBranches" />
+  </wsdl:message>
+  <wsdl:message name="AllBranchesSoapOut">
+    <wsdl:part name="parameters" element="tns:AllBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListBranchesSearchbyCityNameSoapIn">
+    <wsdl:part name="parameters" element="tns:ListBranchesSearchbyCityName" />
+  </wsdl:message>
+  <wsdl:message name="ListBranchesSearchbyCityNameSoapOut">
+    <wsdl:part name="parameters" element="tns:ListBranchesSearchbyCityNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="trackandtraceDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:trackandtraceDetails" />
+  </wsdl:message>
+  <wsdl:message name="trackandtraceDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:trackandtraceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="trackandtracehistorySoapIn">
+    <wsdl:part name="parameters" element="tns:trackandtracehistory" />
+  </wsdl:message>
+  <wsdl:message name="trackandtracehistorySoapOut">
+    <wsdl:part name="parameters" element="tns:trackandtracehistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashRemittancePPHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:CashRemittancePPHeader" />
+  </wsdl:message>
+  <wsdl:message name="CashRemittancePPHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:CashRemittancePPHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashRemittanceIPPHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:CashRemittanceIPPHeader" />
+  </wsdl:message>
+  <wsdl:message name="CashRemittanceIPPHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:CashRemittanceIPPHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="betaBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:betaBooking" />
+  </wsdl:message>
+  <wsdl:message name="betaBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:betaBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="vwMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:vwMobile" />
+  </wsdl:message>
+  <wsdl:message name="vwMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:vwMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:LBCCountries" />
+  </wsdl:message>
+  <wsdl:message name="LBCCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:LBCCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProductsandServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProductsandServices" />
+  </wsdl:message>
+  <wsdl:message name="ListProductsandServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProductsandServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProductTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProductTypes" />
+  </wsdl:message>
+  <wsdl:message name="ListProductTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProductTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListHotlinesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListHotlines" />
+  </wsdl:message>
+  <wsdl:message name="ListHotlinesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListHotlinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCProvincesSoapIn">
+    <wsdl:part name="parameters" element="tns:LBCProvinces" />
+  </wsdl:message>
+  <wsdl:message name="LBCProvincesSoapOut">
+    <wsdl:part name="parameters" element="tns:LBCProvincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:LBCCities" />
+  </wsdl:message>
+  <wsdl:message name="LBCCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:LBCCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCBranchesSoapIn">
+    <wsdl:part name="parameters" element="tns:LBCBranches" />
+  </wsdl:message>
+  <wsdl:message name="LBCBranchesSoapOut">
+    <wsdl:part name="parameters" element="tns:LBCBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCBranchCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:LBCBranchCountry" />
+  </wsdl:message>
+  <wsdl:message name="LBCBranchCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:LBCBranchCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRemittanceRateSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRemittanceRate" />
+  </wsdl:message>
+  <wsdl:message name="ListRemittanceRateSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRemittanceRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRemittanceRate_NEWSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRemittanceRate_NEW" />
+  </wsdl:message>
+  <wsdl:message name="ListRemittanceRate_NEWSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRemittanceRate_NEWResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDocuments" />
+  </wsdl:message>
+  <wsdl:message name="ListDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListPlasticPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:ListPlasticPackage" />
+  </wsdl:message>
+  <wsdl:message name="ListPlasticPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:ListPlasticPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListBoxPackageRateSoapIn">
+    <wsdl:part name="parameters" element="tns:ListBoxPackageRate" />
+  </wsdl:message>
+  <wsdl:message name="ListBoxPackageRateSoapOut">
+    <wsdl:part name="parameters" element="tns:ListBoxPackageRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalSoapIn">
+    <wsdl:part name="parameters" element="tns:ListInternational" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalSoapOut">
+    <wsdl:part name="parameters" element="tns:ListInternationalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCountries" />
+  </wsdl:message>
+  <wsdl:message name="ListCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListInternationalCountries" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListInternationalCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListInternationalCities" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListInternationalCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalProductSoapIn">
+    <wsdl:part name="parameters" element="tns:ListInternationalProduct" />
+  </wsdl:message>
+  <wsdl:message name="ListInternationalProductSoapOut">
+    <wsdl:part name="parameters" element="tns:ListInternationalProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProductSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProduct" />
+  </wsdl:message>
+  <wsdl:message name="ListProductSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAreas" />
+  </wsdl:message>
+  <wsdl:message name="ListAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListBalikBayanBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:ListBalikBayanBox" />
+  </wsdl:message>
+  <wsdl:message name="ListBalikBayanBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:ListBalikBayanBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListD1SoapIn">
+    <wsdl:part name="parameters" element="tns:ListD1" />
+  </wsdl:message>
+  <wsdl:message name="ListD1SoapOut">
+    <wsdl:part name="parameters" element="tns:ListD1Response" />
+  </wsdl:message>
+  <wsdl:message name="SaveTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTicket" />
+  </wsdl:message>
+  <wsdl:message name="SaveTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCMOSConcernTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCMOSConcernType" />
+  </wsdl:message>
+  <wsdl:message name="ListCMOSConcernTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCMOSConcernTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCMOSCallerClassificationSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCMOSCallerClassification" />
+  </wsdl:message>
+  <wsdl:message name="ListCMOSCallerClassificationSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCMOSCallerClassificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLBCRateUsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLBCRateUs" />
+  </wsdl:message>
+  <wsdl:message name="ListLBCRateUsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLBCRateUsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCRateUsSoapIn">
+    <wsdl:part name="parameters" element="tns:LBCRateUs" />
+  </wsdl:message>
+  <wsdl:message name="LBCRateUsSoapOut">
+    <wsdl:part name="parameters" element="tns:LBCRateUsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LBCPromoSoapIn">
+    <wsdl:part name="parameters" element="tns:LBCPromo" />
+  </wsdl:message>
+  <wsdl:message name="LBCPromoSoapOut">
+    <wsdl:part name="parameters" element="tns:LBCPromoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSubCompAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:ListSubCompAreas" />
+  </wsdl:message>
+  <wsdl:message name="ListSubCompAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:ListSubCompAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListTeamsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListTeams" />
+  </wsdl:message>
+  <wsdl:message name="ListTeamsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListBranchesByTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:ListBranchesByTeam" />
+  </wsdl:message>
+  <wsdl:message name="ListBranchesByTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:ListBranchesByTeamResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Mobilegetcountries">
+      <wsdl:input message="tns:MobilegetcountriesSoapIn" />
+      <wsdl:output message="tns:MobilegetcountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mobilegetprovinces">
+      <wsdl:input message="tns:MobilegetprovincesSoapIn" />
+      <wsdl:output message="tns:MobilegetprovincesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileSearchBranch">
+      <wsdl:input message="tns:MobileSearchBranchSoapIn" />
+      <wsdl:output message="tns:MobileSearchBranchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getprovinces">
+      <wsdl:input message="tns:getprovincesSoapIn" />
+      <wsdl:output message="tns:getprovincesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <wsdl:input message="tns:getCitiesSoapIn" />
+      <wsdl:output message="tns:getCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBranch">
+      <wsdl:input message="tns:SearchBranchSoapIn" />
+      <wsdl:output message="tns:SearchBranchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllBranches">
+      <wsdl:input message="tns:AllBranchesSoapIn" />
+      <wsdl:output message="tns:AllBranchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBranchesSearchbyCityName">
+      <wsdl:input message="tns:ListBranchesSearchbyCityNameSoapIn" />
+      <wsdl:output message="tns:ListBranchesSearchbyCityNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="trackandtraceDetails">
+      <wsdl:input message="tns:trackandtraceDetailsSoapIn" />
+      <wsdl:output message="tns:trackandtraceDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="trackandtracehistory">
+      <wsdl:input message="tns:trackandtracehistorySoapIn" />
+      <wsdl:output message="tns:trackandtracehistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CashRemittancePPHeader">
+      <wsdl:input message="tns:CashRemittancePPHeaderSoapIn" />
+      <wsdl:output message="tns:CashRemittancePPHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CashRemittanceIPPHeader">
+      <wsdl:input message="tns:CashRemittanceIPPHeaderSoapIn" />
+      <wsdl:output message="tns:CashRemittanceIPPHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="betaBooking">
+      <wsdl:input message="tns:betaBookingSoapIn" />
+      <wsdl:output message="tns:betaBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMobile">
+      <wsdl:input message="tns:AddMobileSoapIn" />
+      <wsdl:output message="tns:AddMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vwMobile">
+      <wsdl:input message="tns:vwMobileSoapIn" />
+      <wsdl:output message="tns:vwMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCCountries">
+      <wsdl:input message="tns:LBCCountriesSoapIn" />
+      <wsdl:output message="tns:LBCCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsandServices">
+      <wsdl:input message="tns:ListProductsandServicesSoapIn" />
+      <wsdl:output message="tns:ListProductsandServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductTypes">
+      <wsdl:input message="tns:ListProductTypesSoapIn" />
+      <wsdl:output message="tns:ListProductTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHotlines">
+      <wsdl:input message="tns:ListHotlinesSoapIn" />
+      <wsdl:output message="tns:ListHotlinesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCProvinces">
+      <wsdl:input message="tns:LBCProvincesSoapIn" />
+      <wsdl:output message="tns:LBCProvincesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCCities">
+      <wsdl:input message="tns:LBCCitiesSoapIn" />
+      <wsdl:output message="tns:LBCCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCBranches">
+      <wsdl:input message="tns:LBCBranchesSoapIn" />
+      <wsdl:output message="tns:LBCBranchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCBranchCountry">
+      <wsdl:input message="tns:LBCBranchCountrySoapIn" />
+      <wsdl:output message="tns:LBCBranchCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceRate">
+      <wsdl:input message="tns:ListRemittanceRateSoapIn" />
+      <wsdl:output message="tns:ListRemittanceRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceRate_NEW">
+      <wsdl:input message="tns:ListRemittanceRate_NEWSoapIn" />
+      <wsdl:output message="tns:ListRemittanceRate_NEWSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDocuments">
+      <wsdl:input message="tns:ListDocumentsSoapIn" />
+      <wsdl:output message="tns:ListDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPlasticPackage">
+      <wsdl:input message="tns:ListPlasticPackageSoapIn" />
+      <wsdl:output message="tns:ListPlasticPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBoxPackageRate">
+      <wsdl:input message="tns:ListBoxPackageRateSoapIn" />
+      <wsdl:output message="tns:ListBoxPackageRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInternational">
+      <wsdl:input message="tns:ListInternationalSoapIn" />
+      <wsdl:output message="tns:ListInternationalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCountries">
+      <wsdl:input message="tns:ListCountriesSoapIn" />
+      <wsdl:output message="tns:ListCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalCountries">
+      <wsdl:input message="tns:ListInternationalCountriesSoapIn" />
+      <wsdl:output message="tns:ListInternationalCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalCities">
+      <wsdl:input message="tns:ListInternationalCitiesSoapIn" />
+      <wsdl:output message="tns:ListInternationalCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalProduct">
+      <wsdl:input message="tns:ListInternationalProductSoapIn" />
+      <wsdl:output message="tns:ListInternationalProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProduct">
+      <wsdl:input message="tns:ListProductSoapIn" />
+      <wsdl:output message="tns:ListProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAreas">
+      <wsdl:input message="tns:ListAreasSoapIn" />
+      <wsdl:output message="tns:ListAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBalikBayanBox">
+      <wsdl:input message="tns:ListBalikBayanBoxSoapIn" />
+      <wsdl:output message="tns:ListBalikBayanBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListD1">
+      <wsdl:input message="tns:ListD1SoapIn" />
+      <wsdl:output message="tns:ListD1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTicket">
+      <wsdl:input message="tns:SaveTicketSoapIn" />
+      <wsdl:output message="tns:SaveTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCMOSConcernType">
+      <wsdl:input message="tns:ListCMOSConcernTypeSoapIn" />
+      <wsdl:output message="tns:ListCMOSConcernTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCMOSCallerClassification">
+      <wsdl:input message="tns:ListCMOSCallerClassificationSoapIn" />
+      <wsdl:output message="tns:ListCMOSCallerClassificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLBCRateUs">
+      <wsdl:input message="tns:ListLBCRateUsSoapIn" />
+      <wsdl:output message="tns:ListLBCRateUsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCRateUs">
+      <wsdl:input message="tns:LBCRateUsSoapIn" />
+      <wsdl:output message="tns:LBCRateUsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LBCPromo">
+      <wsdl:input message="tns:LBCPromoSoapIn" />
+      <wsdl:output message="tns:LBCPromoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSubCompAreas">
+      <wsdl:input message="tns:ListSubCompAreasSoapIn" />
+      <wsdl:output message="tns:ListSubCompAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListTeams">
+      <wsdl:input message="tns:ListTeamsSoapIn" />
+      <wsdl:output message="tns:ListTeamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBranchesByTeam">
+      <wsdl:input message="tns:ListBranchesByTeamSoapIn" />
+      <wsdl:output message="tns:ListBranchesByTeamSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Mobilegetcountries">
+      <soap:operation soapAction="http://tempuri.org/Mobilegetcountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mobilegetprovinces">
+      <soap:operation soapAction="http://tempuri.org/Mobilegetprovinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileSearchBranch">
+      <soap:operation soapAction="http://tempuri.org/MobileSearchBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getprovinces">
+      <soap:operation soapAction="http://tempuri.org/getprovinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="http://tempuri.org/getCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBranch">
+      <soap:operation soapAction="http://tempuri.org/SearchBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllBranches">
+      <soap:operation soapAction="http://tempuri.org/AllBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBranchesSearchbyCityName">
+      <soap:operation soapAction="http://tempuri.org/ListBranchesSearchbyCityName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trackandtraceDetails">
+      <soap:operation soapAction="http://tempuri.org/trackandtraceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trackandtracehistory">
+      <soap:operation soapAction="http://tempuri.org/trackandtracehistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CashRemittancePPHeader">
+      <soap:operation soapAction="http://tempuri.org/CashRemittancePPHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CashRemittanceIPPHeader">
+      <soap:operation soapAction="http://tempuri.org/CashRemittanceIPPHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="betaBooking">
+      <soap:operation soapAction="http://tempuri.org/betaBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMobile">
+      <soap:operation soapAction="http://tempuri.org/AddMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vwMobile">
+      <soap:operation soapAction="http://tempuri.org/vwMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCCountries">
+      <soap:operation soapAction="http://tempuri.org/LBCCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsandServices">
+      <soap:operation soapAction="http://tempuri.org/ListProductsandServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductTypes">
+      <soap:operation soapAction="http://tempuri.org/ListProductTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListHotlines">
+      <soap:operation soapAction="http://tempuri.org/ListHotlines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCProvinces">
+      <soap:operation soapAction="http://tempuri.org/LBCProvinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCCities">
+      <soap:operation soapAction="http://tempuri.org/LBCCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCBranches">
+      <soap:operation soapAction="http://tempuri.org/LBCBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCBranchCountry">
+      <soap:operation soapAction="http://tempuri.org/LBCBranchCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceRate">
+      <soap:operation soapAction="http://tempuri.org/ListRemittanceRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceRate_NEW">
+      <soap:operation soapAction="http://tempuri.org/ListRemittanceRate_NEW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDocuments">
+      <soap:operation soapAction="http://tempuri.org/ListDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListPlasticPackage">
+      <soap:operation soapAction="http://tempuri.org/ListPlasticPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBoxPackageRate">
+      <soap:operation soapAction="http://tempuri.org/ListBoxPackageRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternational">
+      <soap:operation soapAction="http://tempuri.org/ListInternational" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCountries">
+      <soap:operation soapAction="http://tempuri.org/ListCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalCountries">
+      <soap:operation soapAction="http://tempuri.org/ListInternationalCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalCities">
+      <soap:operation soapAction="http://tempuri.org/ListInternationalCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalProduct">
+      <soap:operation soapAction="http://tempuri.org/ListInternationalProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProduct">
+      <soap:operation soapAction="http://tempuri.org/ListProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAreas">
+      <soap:operation soapAction="http://tempuri.org/ListAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBalikBayanBox">
+      <soap:operation soapAction="http://tempuri.org/ListBalikBayanBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListD1">
+      <soap:operation soapAction="http://tempuri.org/ListD1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTicket">
+      <soap:operation soapAction="http://tempuri.org/SaveTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCMOSConcernType">
+      <soap:operation soapAction="http://tempuri.org/ListCMOSConcernType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCMOSCallerClassification">
+      <soap:operation soapAction="http://tempuri.org/ListCMOSCallerClassification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLBCRateUs">
+      <soap:operation soapAction="http://tempuri.org/ListLBCRateUs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCRateUs">
+      <soap:operation soapAction="http://tempuri.org/LBCRateUs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCPromo">
+      <soap:operation soapAction="http://tempuri.org/LBCPromo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSubCompAreas">
+      <soap:operation soapAction="http://tempuri.org/ListSubCompAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTeams">
+      <soap:operation soapAction="http://tempuri.org/ListTeams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBranchesByTeam">
+      <soap:operation soapAction="http://tempuri.org/ListBranchesByTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Mobilegetcountries">
+      <soap12:operation soapAction="http://tempuri.org/Mobilegetcountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mobilegetprovinces">
+      <soap12:operation soapAction="http://tempuri.org/Mobilegetprovinces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileSearchBranch">
+      <soap12:operation soapAction="http://tempuri.org/MobileSearchBranch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getprovinces">
+      <soap12:operation soapAction="http://tempuri.org/getprovinces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap12:operation soapAction="http://tempuri.org/getCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBranch">
+      <soap12:operation soapAction="http://tempuri.org/SearchBranch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllBranches">
+      <soap12:operation soapAction="http://tempuri.org/AllBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBranchesSearchbyCityName">
+      <soap12:operation soapAction="http://tempuri.org/ListBranchesSearchbyCityName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trackandtraceDetails">
+      <soap12:operation soapAction="http://tempuri.org/trackandtraceDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trackandtracehistory">
+      <soap12:operation soapAction="http://tempuri.org/trackandtracehistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CashRemittancePPHeader">
+      <soap12:operation soapAction="http://tempuri.org/CashRemittancePPHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CashRemittanceIPPHeader">
+      <soap12:operation soapAction="http://tempuri.org/CashRemittanceIPPHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="betaBooking">
+      <soap12:operation soapAction="http://tempuri.org/betaBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vwMobile">
+      <soap12:operation soapAction="http://tempuri.org/vwMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCCountries">
+      <soap12:operation soapAction="http://tempuri.org/LBCCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsandServices">
+      <soap12:operation soapAction="http://tempuri.org/ListProductsandServices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductTypes">
+      <soap12:operation soapAction="http://tempuri.org/ListProductTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListHotlines">
+      <soap12:operation soapAction="http://tempuri.org/ListHotlines" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCProvinces">
+      <soap12:operation soapAction="http://tempuri.org/LBCProvinces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCCities">
+      <soap12:operation soapAction="http://tempuri.org/LBCCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCBranches">
+      <soap12:operation soapAction="http://tempuri.org/LBCBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCBranchCountry">
+      <soap12:operation soapAction="http://tempuri.org/LBCBranchCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceRate">
+      <soap12:operation soapAction="http://tempuri.org/ListRemittanceRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceRate_NEW">
+      <soap12:operation soapAction="http://tempuri.org/ListRemittanceRate_NEW" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDocuments">
+      <soap12:operation soapAction="http://tempuri.org/ListDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListPlasticPackage">
+      <soap12:operation soapAction="http://tempuri.org/ListPlasticPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBoxPackageRate">
+      <soap12:operation soapAction="http://tempuri.org/ListBoxPackageRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternational">
+      <soap12:operation soapAction="http://tempuri.org/ListInternational" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCountries">
+      <soap12:operation soapAction="http://tempuri.org/ListCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalCountries">
+      <soap12:operation soapAction="http://tempuri.org/ListInternationalCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalCities">
+      <soap12:operation soapAction="http://tempuri.org/ListInternationalCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInternationalProduct">
+      <soap12:operation soapAction="http://tempuri.org/ListInternationalProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProduct">
+      <soap12:operation soapAction="http://tempuri.org/ListProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAreas">
+      <soap12:operation soapAction="http://tempuri.org/ListAreas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBalikBayanBox">
+      <soap12:operation soapAction="http://tempuri.org/ListBalikBayanBox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListD1">
+      <soap12:operation soapAction="http://tempuri.org/ListD1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTicket">
+      <soap12:operation soapAction="http://tempuri.org/SaveTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCMOSConcernType">
+      <soap12:operation soapAction="http://tempuri.org/ListCMOSConcernType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCMOSCallerClassification">
+      <soap12:operation soapAction="http://tempuri.org/ListCMOSCallerClassification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLBCRateUs">
+      <soap12:operation soapAction="http://tempuri.org/ListLBCRateUs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCRateUs">
+      <soap12:operation soapAction="http://tempuri.org/LBCRateUs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LBCPromo">
+      <soap12:operation soapAction="http://tempuri.org/LBCPromo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSubCompAreas">
+      <soap12:operation soapAction="http://tempuri.org/ListSubCompAreas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTeams">
+      <soap12:operation soapAction="http://tempuri.org/ListTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListBranchesByTeam">
+      <soap12:operation soapAction="http://tempuri.org/ListBranchesByTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://lbcfbapi.lbcexpress.com/dev/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://lbcfbapi.lbcexpress.com/dev/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBCTrackingTest", "LBCTrackingTest\LBCTrackingTest.csproj", "{C22D466E-CF47-4043-B9BF-EFFBCBFFA628}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBCTracking.Library", "LBCTracking.Library\LBCTracking.Library.csproj", "{4485CE53-CD49-47D2-93E2-59E2BFFC719F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTester", "LibTester\LibTester.csproj", "{11FF01E4-DD9B-4EF9-A4C4-9398C1B012CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C22D466E-CF47-4043-B9BF-EFFBCBFFA628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C22D466E-CF47-4043-B9BF-EFFBCBFFA628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C22D466E-CF47-4043-B9BF-EFFBCBFFA628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4485CE53-CD49-47D2-93E2-59E2BFFC719F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4485CE53-CD49-47D2-93E2-59E2BFFC719F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4485CE53-CD49-47D2-93E2-59E2BFFC719F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4485CE53-CD49-47D2-93E2-59E2BFFC719F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11FF01E4-DD9B-4EF9-A4C4-9398C1B012CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11FF01E4-DD9B-4EF9-A4C4-9398C1B012CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11FF01E4-DD9B-4EF9-A4C4-9398C1B012CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11FF01E4-DD9B-4EF9-A4C4-9398C1B012CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

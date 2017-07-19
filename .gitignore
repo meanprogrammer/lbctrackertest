@@ -4,3 +4,8 @@
 
 /LBCTrackingTest/LBCTrackingTest/bin
 *.suo
+/LBCTrackingTest/LBCTracking.Library/bin/Debug
+/LBCTrackingTest/LBCTracking.Library/obj/Debug
+/LBCTrackingTest/LibTester/bin/Debug
+/LBCTrackingTest/LibTester/obj/Debug
+/LBCTrackingTest/LBCTrackingTest/obj/Debug/TempPE
