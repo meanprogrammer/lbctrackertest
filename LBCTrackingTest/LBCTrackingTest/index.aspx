@@ -42,7 +42,7 @@
 </html>
 <script>
     $(document).ready(function () {
-        $('#TrackingTextbox').click(function () {
+        $('#AddTrackingButton').click(function () {
             $.ajax({
                 type: "GET",
                 url: "TrackingHandler.ashx?tno=311216816471",

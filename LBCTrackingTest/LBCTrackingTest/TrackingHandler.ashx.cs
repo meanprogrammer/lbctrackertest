@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,13 +15,15 @@ namespace LBCTrackingTest
 
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/plain";
+            context.Response.ContentType = "application/json";
 
             string trackingNo = context.Request.QueryString.Get("tno");
 
             Service.LBCTracking service = new Service.LBCTracking();
-            service.GetLatestStatus(trackingNo);
-            //context.Response.Write("Hello World");
+            Service.ShipmentLatestStatus status = service.GetLatestStatus(trackingNo);
+
+            string json = JsonConvert.SerializeObject(status);
+            context.Response.Write(json);
         }
 
         public bool IsReusable
