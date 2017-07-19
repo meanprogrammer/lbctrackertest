@@ -51,7 +51,7 @@
         $('#AddTrackingButton').click(function () {
             $.ajax({
                 type: "POST",
-                url: "TrackingHandler.ashx?tno=311216816471",
+                url: "TrackingHandler.ashx?tno=" + $('#TrackingTextbox').val(),
                 success: function (data) {
                     console.log(data.DatePosted);
                     console.log(data.To);
