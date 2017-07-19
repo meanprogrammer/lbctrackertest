@@ -58,7 +58,7 @@
                     console.log(data.ToAddress);
                     console.log(data.StatusandLocation);
 
-                    $('#result-table').after('<tr>' + '<td>' + data.DatePosted + '</td>' + '<td>' + data.To + '</td>' + '<td>' + data.ToAddress + '</td>' + '<td>' + data.StatusandLocation + '</td></tr>');
+                    $('#result-table').append('<tr>' + '<td>' + data.DatePosted + '</td>' + '<td>' + data.To + '</td>' + '<td>' + data.ToAddress + '</td>' + '<td>' + data.StatusandLocation + '</td></tr>');
                 }
             });
         });
