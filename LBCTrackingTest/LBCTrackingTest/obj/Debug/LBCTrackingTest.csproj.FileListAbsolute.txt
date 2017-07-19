@@ -19,3 +19,9 @@ C:\Users\MeanProgrammer\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingT
 C:\Users\MeanProgrammer\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\Microsoft.Practices.Unity.Interception.xml
 C:\Users\MeanProgrammer\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\Microsoft.Practices.Unity.Interception.Configuration.xml
 C:\Users\MeanProgrammer\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.csprojResolveAssemblyReference.cache
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\LBCTrackingTest.dll.config
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\LBCTrackingTest.dll
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\bin\LBCTrackingTest.pdb
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.csprojResolveAssemblyReference.cache
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.dll
+C:\Users\vd2\Source\Repos\lbctrackertest\LBCTrackingTest\LBCTrackingTest\obj\Debug\LBCTrackingTest.pdb

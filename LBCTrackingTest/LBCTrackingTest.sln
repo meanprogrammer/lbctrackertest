@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBCTrackingTest", "LBCTrackingTest\LBCTrackingTest.csproj", "{C22D466E-CF47-4043-B9BF-EFFBCBFFA628}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{A652E5F6-7A57-4CBC-A369-0BAA0B74EF93}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.EnterpriseLibrary.AppSettings.Configuration.Design.dll = ..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.EnterpriseLibrary.AppSettings.Configuration.Design.dll
+		..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll = ..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+		..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll = ..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.ObjectBuilder2.dll = ..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 4.1 - October 2008\Bin\Microsoft.Practices.ObjectBuilder2.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
