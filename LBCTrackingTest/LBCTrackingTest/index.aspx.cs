@@ -1,4 +1,5 @@
 ﻿using LBCTrackingTest.LBCAPI;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace LBCTrackingTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ICacheManager cache = CacheFactory.GetCacheManager();
+            ICacheManager cache = CacheFactory.GetCacheManager();
 
             //List<string> trackingNos = cache.GetData("trackingNos") as List<string>;
             // trackingNos.ToArray(); 
