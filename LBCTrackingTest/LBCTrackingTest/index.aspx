@@ -44,7 +44,7 @@
     $(document).ready(function () {
         $('#AddTrackingButton').click(function () {
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "TrackingHandler.ashx?tno=311216816471",
                 success: function (data) {
                     console.log(data);
