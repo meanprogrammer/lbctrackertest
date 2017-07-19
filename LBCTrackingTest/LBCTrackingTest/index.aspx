@@ -11,8 +11,10 @@
     <form id="form1" runat="server">
     <div>
         <h1>Index</h1>
-        <asp:TextBox ID="TrackingTextbox" ClientIDMode="Static" ></asp:TextBox>
-        <asp:Button ID="AddTrackingButton" ClientIDMode="Static" Text="Add"/>
+        <input type="text" id="TrackingTextbox" name="TrackingTextbox" />
+        <input type="button" id="AddTrackingButton" name="AddTrackingButton" value="Add" />
+        <!--<asp:TextBox ID="TrackingTextbox" ClientIDMode="Static"></asp:TextBox>
+        <asp:Button ID="AddTrackingButton" ClientIDMode="Static" Text="Add"/>-->
 
 
 
