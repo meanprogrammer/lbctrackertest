@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -35,6 +36,11 @@
                 </asp:TableHeaderRow>
             </asp:Table>
         </p>-->
+
+        <table id="result-table" class="table table-bordered">
+            <tr><th>Date</th><th>To</th><th>To Address</th><th>Latest Status</th></tr>
+        </table>
+
         <asp:HiddenField ID="trackingNos" ClientIDMode="Static" runat="server" />
     </div>
     </form>
@@ -48,7 +54,11 @@
                 url: "TrackingHandler.ashx?tno=311216816471",
                 success: function (data) {
                     console.log(data.DatePosted);
-                    console.log(data['DatePosted']);
+                    console.log(data.To);
+                    console.log(data.ToAddress);
+                    console.log(data.StatusandLocation);
+
+                    $('#result-table > tr:last').append('<tr>' + '<td>' + data.DatePosted + '</td>' + '<td>' + data.To + '</td>' + '<td>' + data.ToAddress + '</td>' + '<td>' + data.StatusandLocation + '</td></tr>');
                 }
             });
         });
