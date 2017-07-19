@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Service = LBCTracking.Library;
 
 namespace LBCTrackingTest
 {
@@ -14,7 +15,12 @@ namespace LBCTrackingTest
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+
+            string trackingNo = context.Request.QueryString.Get("tno");
+
+            Service.LBCTracking service = new Service.LBCTracking();
+            service.GetLatestStatus(trackingNo);
+            //context.Response.Write("Hello World");
         }
 
         public bool IsReusable

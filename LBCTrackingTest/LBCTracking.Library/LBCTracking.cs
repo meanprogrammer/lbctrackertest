@@ -1,4 +1,5 @@
 ﻿using LBCTracking.Library.LBCService;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace LBCTracking.Library
 {
     public class LBCTracking : LBCTrackingBase
     {
-
+        ICacheManager cache = CacheFactory.GetCacheManager();
         public LBCTracking()
         {
         }
@@ -57,6 +58,7 @@ namespace LBCTracking.Library
 
              result = latest;
 
+             CacheHelper.AppendToCache(trackingNo, cache);
 
             return result;
         }

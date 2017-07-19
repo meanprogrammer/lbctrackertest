@@ -14,7 +14,18 @@ namespace LBCTrackingTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ICacheManager cache = CacheFactory.GetCacheManager();
+            if (!Page.IsPostBack)
+            {
+                ICacheManager cache = CacheFactory.GetCacheManager();
+                string result = string.Empty;
+                if (cache.Contains("trackingNos")) { 
+                    result = cache.GetData("trackingNos").ToString();
+                }
+                this.trackingNos.Value = result;
+            }
+
+            return;
+            //ICacheManager cache = CacheFactory.GetCacheManager();
 
             //List<string> trackingNos = cache.GetData("trackingNos") as List<string>;
             // trackingNos.ToArray(); 
