@@ -19,7 +19,14 @@ namespace LBCTracking.Library
 
             if(!currentValue.Contains(trackingNo))
             {
-                currentValue = currentValue+","+trackingNo;
+                if (currentValue == string.Empty)
+                {
+                    currentValue = trackingNo;
+                }
+                else
+                {
+                    currentValue = currentValue + "," + trackingNo;
+                }
             }
             cache.Add(Resources.TrackingCacheKey, currentValue);
         }
