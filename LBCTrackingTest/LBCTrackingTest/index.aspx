@@ -45,7 +45,7 @@
         $('#TrackingTextbox').click(function () {
             $.ajax({
                 type: "GET",
-                url: "TrackingHandler.ashx",
+                url: "TrackingHandler.ashx?tno=311216816471",
                 success: function (data) {
                     console.log(data);
                 }
