@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
     <div>
         <h1>Index</h1>
+         
         <input type="text" id="TrackingTextbox" name="TrackingTextbox" />
         <input type="button" id="AddTrackingButton" name="AddTrackingButton" value="Add" />
         <!--<asp:TextBox ID="TrackingTextbox" ClientIDMode="Static"></asp:TextBox>
@@ -47,8 +48,7 @@
                 url: "TrackingHandler.ashx",
                 success: function (data) {
                     console.log(data);
-                },
-                dataType: 'jsonp',
+                }
             });
         });
     });
