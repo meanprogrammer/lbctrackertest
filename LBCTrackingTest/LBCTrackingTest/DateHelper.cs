@@ -17,5 +17,10 @@ namespace LBCTrackingTest
 
             return result;
         }
+
+        public static void DoSomething()
+        {
+            //something 
+        }
     }
 }
